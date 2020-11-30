@@ -1,0 +1,14 @@
+{% extends 'accounts/base.html'%}
+
+{% block content %}
+
+<div class="container jumbotron"style="margin-top: 20px; width:800px;" >
+    <div  style="display: flex; flex-direction: column; justify-content: center; align-items: center;">   
+        <img src="{{agent.profile_image.url}}" alt="..." height="400", width="400" >
+        <p></p>
+        <h1>Name : {{agent.first_name}} {{agent.last_name}}</h1>
+        <h1>Email : {{agent.email}}</h1>
+        <h1>Contact Number : {{agent.phone_number}}</h1>
+    </div>
+</div>
+{% endblock content %}

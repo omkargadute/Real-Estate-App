@@ -1,0 +1,21 @@
+#page-content {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content{
+    padding-bottom: 3.5rem;    /* Footer height */
+  }
+  
+  #footer{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color:#292b2c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.5rem;            /* Footer height */
+  }

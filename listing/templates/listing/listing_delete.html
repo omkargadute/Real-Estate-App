@@ -1,0 +1,9 @@
+{% extends 'listing/base.html'%}
+
+{% block content %}
+<form action="" method="POST" class= "form">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ listing.name }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'listing/base.html'%}
+
+{% block content %}
+<div class="container" style = "margin-top:20px;">
+    <div class="row row-cols-1 row-cols-md-3">
+        {% for listing in all_listings %}
+        <div class="col mb-4">
+          <div class="card">
+            <img src="{{listing.image.url|default_if_none:'#'}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <a href="{% url 'listing:detail_listing' listing.pk%}"><h5 class="card-title">{{listing.name}}</h5></a>
+            <p class="card-text">Current Owner : {{listing.current_owner}}</p>
+            <p class="card-text">Price : {{listing.price}}</p>
+            <p class="card-text">Address : {{listing.address}}</p>
+            <a href="{% url 'accounts:agent' listing.agent %}"><p class="card-text">Agent : {{listing.agent}}</p></a>
+            {% if user.is_authenticated %}
+            <button type="button" class="btn btn-danger" style="margin-top: 10px;">
+            <a href="{% url 'listing:delete_listing' listing.pk%}" style="text-decoration: none; color: white;">
+                <p class="card-text">Delete</p>
+            </a>
+            </button>
+            <button type="button" class="btn btn-secondary" style="margin-top: 10px;">
+              <a href="{% url 'listing:update_listing' listing.pk%}" style="text-decoration: none; color: white;">
+                <p class="card-text">Update</p>
+            </a>
+            </button>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'listing/base.html'%}
+
+{% block content %}
+<div class="container" style="margin-top:20px;">
+    <div class="listings jumbotron">
+        <div class="listing">
+            <img src="{{listing.image.url|default_if_none:'#'}}" class="card-img-top" alt="...">
+            <h1>{{listing.name}}</h1>
+            <h6>Current Owner : {{listing.current_owner}}</h6>
+            <h6>Price : {{listing.price}}</h6>
+            <h6>Address : {{listing.address}}</h6>
+            <h6>Agent : <a href="{% url 'accounts:agent' listing.agent %}" style="text-decoration:none;">{{listing.agent}}</a></h6>
+            <p>Description : {{listing.desc}}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

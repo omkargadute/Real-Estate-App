@@ -1,0 +1,14 @@
+{% extends 'listing/base.html'%}
+
+{% block content %}
+<form class="jumbotron container" action="" 
+method="POST" class= "form" enctype='multipart/form-data'
+style="margin-top: 20px; display: flex; flex-direction: column;">
+    <h1>Add Listing</h1>
+    <p></p>
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+{% endblock content %}
