@@ -15,4 +15,4 @@ class Listing(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail_listing',args=[str(self.id)])
+        return reverse('listing:detail_listing',args=[str(self.id)])
