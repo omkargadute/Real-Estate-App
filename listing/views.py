@@ -25,7 +25,7 @@ class AddListingView(LoginRequiredMixin,CreateView):
 class DeleteListingView(LoginRequiredMixin,DeleteView):
     model = Listing
     template_name = 'listing/listing_delete.html'
-    success_url = reverse_lazy('listing:home')
+    success_url = reverse_lazy('listing:all_listing')
 
 class UpdateListingView(LoginRequiredMixin,UpdateView):
     model = Listing 
