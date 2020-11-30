@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-18y+bq9m-_3-m$%4hpc6hqelp+x1=19dnj*1ze$(atlm^1fh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','real-estate-app-omkar.herokuapp.com']
 
